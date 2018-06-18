@@ -25,13 +25,22 @@ export class DropdownDirective implements OnInit {
   @HostListener('click') onclick() {
     let subMenu = this.eRef.nativeElement.nextSibling;  
 
+    console.log("DropdownDirective: display = " + subMenu.style.display + " name = " + JSON.stringify(subMenu));
+
     let child = this.eRef.nativeElement.children[0];    
-    if (subMenu.style.display === "none" || subMenu.style.display == '') {
+
+    if (subMenu.style.display == '') {
+      this.renderer.setStyle(subMenu, 'display', 'none');
+
+      this.renderer.addClass(child, 'fa-caret-down');
+      this.renderer.removeClass(child, 'fa-caret-up');  
+    }
+    else if (subMenu.style.display === "none") {
       this.renderer.setStyle(subMenu, 'display', 'block');
 
       this.renderer.addClass(child, 'fa-caret-up');
       this.renderer.removeClass(child, 'fa-caret-down');  
-    } 
+    }     
     else {
       this.renderer.addClass(child, 'fa-caret-down');
       this.renderer.removeClass(child, 'fa-caret-up');

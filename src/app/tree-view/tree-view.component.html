@@ -1,0 +1,59 @@
+
+
+
+<div *ngFor="let dir of directories">
+  
+  <button class="dropdown-btn" appDropdownDirective>{{ dir.name }} 
+    <i class="fa fa-caret-down"></i>
+  </button>  
+
+  <div class="dropdown-container">
+    <tree-view [directories]="dir.directories"></tree-view>
+
+    <div *ngFor="let file of dir.files" class="dropdown-container">
+      <a href="#" class="dropdown-btn">{{ file }} </a>
+    </div>                
+
+  </div>  
+
+</div>
+
+<!-- <div class="sidenav">
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+    <button class="dropdown-btn" appDropdownDirective>Don't Work 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+    <button class="dropdown-btn" appDropdownDirective>Don't Work 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>      
+    <a href="#">Search</a>
+  </div> -->
+  
+
+<!-- <ul>
+    <li *ngFor="let dir of directories">
+        <span><input type="checkbox" [checked]="dir.checked" (click)="dir.check()"    /></span> 
+        <span (click)="dir.toggle()">{{ dir.name }}</span>
+        <div *ngIf="dir.expanded">
+            <ul >
+                <li *ngFor="let file of dir.files">{{file}}</li>
+            </ul>
+            <tree-view [directories]="dir.directories"></tree-view>
+        </div>
+    </li>
+  </ul> -->
+  
+  

@@ -16,9 +16,10 @@ import { AngularSplitModule } from 'angular-split';
 import { PythonComponent } from './python/python.component';
 import { TopbarComponent } from './python/topbar/topbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { LeftMenuComponent } from './python/left-menu/left-menu.component';
-import { DropdownDirective } from './python/left-menu/dropdown.directive';
+import { PythonLeftMenuComponent } from './python/left-menu/left-menu.component';
+import { DropdownDirective } from './tree-view/dropdown.directive';
 import { TypeScriptComponent } from './typescript/typescript.component';
+import { TreeViewComponent } from './tree-view/tree-view.component';
 
 @NgModule({
   declarations: [
@@ -28,9 +29,10 @@ import { TypeScriptComponent } from './typescript/typescript.component';
     PythonComponent,
     TopbarComponent,
     SidebarComponent,
-    LeftMenuComponent,
+    PythonLeftMenuComponent,
     DropdownDirective,
-    TypeScriptComponent
+    TypeScriptComponent,
+    TreeViewComponent
   ],
   imports: [
     BrowserModule,

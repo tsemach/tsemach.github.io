@@ -5,7 +5,7 @@ body {
 /* Fixed sidenav, full height */
 .sidenav {
   height: 50%;
-  width: fit-content;
+  width: 170px;
   position: relative;
   z-index: 1;
   top: 0;

@@ -27,6 +27,7 @@
     "font-awesome": "^4.7.0",
     "marked": "^0.4.0",
     "ngx-bootstrap": "^3.0.0",
+    "path": "^0.12.7",
     "rxjs": "^6.2.1",
     "rxjs-compat": "^6.2.1",
     "zone.js": "^0.8.26"

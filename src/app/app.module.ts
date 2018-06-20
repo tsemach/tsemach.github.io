@@ -20,6 +20,7 @@ import { PythonLeftMenuComponent } from './python/left-menu/left-menu.component'
 import { DropdownDirective } from './tree-view/dropdown.directive';
 import { TypeScriptComponent } from './typescript/typescript.component';
 import { TreeViewComponent } from './tree-view/tree-view.component';
+import { ReadFileHttpClientService } from './services/read-file.httpclient.service';
 
 @NgModule({
   declarations: [
@@ -42,9 +43,10 @@ import { TreeViewComponent } from './tree-view/tree-view.component';
     CollapseModule.forRoot(),
     BsDropdownModule.forRoot(),
     SortableModule.forRoot(),
-    AngularSplitModule
+    AngularSplitModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ReadFileHttpClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

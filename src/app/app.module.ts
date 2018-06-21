@@ -9,7 +9,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { SortableModule } from 'ngx-bootstrap/sortable';
 
 import { AppComponent } from './app.component';
-import { TunnelComponent } from './python/tunnel/tunnel.component';
+import { PythonViewerComponent } from './python/viewer/viewer.component';
 import { HistogramComponent } from './python/histogram/histogram.component';
 import { AppRoutingModule } from './app-routing-module';
 import { AngularSplitModule } from 'angular-split';
@@ -26,7 +26,7 @@ import { ReadFileHttpClientService } from './services/read-file.httpclient.servi
 @NgModule({
   declarations: [
     AppComponent,
-    TunnelComponent,
+    PythonViewerComponent,
     HistogramComponent,
     PythonComponent,
     TopbarNavbarBrandComponent,

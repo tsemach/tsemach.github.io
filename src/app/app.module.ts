@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing-module';
 import { AngularSplitModule } from 'angular-split';
 import { PythonComponent } from './python/python.component';
 import { TopbarNavbarBrandComponent } from './python/topbar-navbar-brand/topbar-navbar-brand.component';
+import { TopbarNavComponent } from './python/topbar-nav/topbar-nav.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { PythonLeftMenuComponent } from './python/left-menu/left-menu.component';
 import { DropdownDirective } from './tree-view/dropdown.directive';
@@ -29,6 +30,7 @@ import { ReadFileHttpClientService } from './services/read-file.httpclient.servi
     HistogramComponent,
     PythonComponent,
     TopbarNavbarBrandComponent,
+    TopbarNavComponent,
     SidebarComponent,
     PythonLeftMenuComponent,
     DropdownDirective,

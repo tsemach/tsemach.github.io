@@ -18,6 +18,7 @@ export class PythonLeftMenuComponent implements OnInit, OnDestroy {
   
   directories: Array<Directory>;
   htmlPythonFilelist: string = '';
+  source = '/python/viewer';
 
   constructor(private readFileService: ReadFileHttpClientService) {     
     

@@ -10,7 +10,7 @@ const appRoutes: Routes = [
   // {path: 'tunnel', 'component': TunnelComponent},
   // {path: 'histogram', 'component': HistogramComponent},
   {path: 'python', 'component': PythonComponent, children: [
-    { path: 'view', 'component': PythonViewerComponent }, 
+    { path: 'viewer/:filename', 'component': PythonViewerComponent }, 
     { path: 'histogram', 'component': HistogramComponent }    
   ] },
   {path: 'typescript', 'component': TypeScriptComponent},

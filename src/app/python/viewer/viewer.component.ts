@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-python-viewer',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PythonViewerComponent implements OnInit {
 
-  constructor() { }
+  filename: string;
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.filename = this.route.snapshot.params['filename'];
+
+    this.route.params.subscribe(
+      (params: Params) => {
+        console.log("PythonViewerComponent: file = " + params['filename']);
+        this.filename = params['filename'];
+      }
+    )
   }
 
 }

@@ -8,10 +8,10 @@
   </button>  
 
   <div class="dropdown-container">
-    <tree-view [directories]="dir.directories"></tree-view>
+    <tree-view [directories]="dir.directories" [source]="source"></tree-view>
 
     <div *ngFor="let file of dir.files" class="dropdown-container">
-      <a href="#" class="dropdown-btn">{{ file }} </a>
+      <a [routerLink]="[source, file]" class="dropdown-btn">{{ file }} </a>
     </div>                
 
   </div>  

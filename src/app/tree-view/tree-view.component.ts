@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Directory } from '../services/directory';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'tree-view',
@@ -9,10 +10,15 @@ import { Directory } from '../services/directory';
 export class TreeViewComponent implements OnInit {
 
   @Input() directories: Array<Directory>;
+  @Input() source: string;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  // onFileClick(filename: string) {
+  //   console.log("onFileClick: navigate to " + filename);
+  //   //this.router.navigate([this.source, filename])
+  // }
 }

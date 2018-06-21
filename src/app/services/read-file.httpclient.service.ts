@@ -1,0 +1,59 @@
+import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs/Subject';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import * as marked from 'marked';
+
+@Injectable()
+export class ReadFileHttpClientService {
+    private base = 'https://raw.githubusercontent.com/tsemach/';
+    private cached = new Map<string, string>();
+
+    public fileIsReady = new Subject();
+
+    httpOptions = {
+      headers: new HttpHeaders({ 
+        'Access-Control-Allow-Origin':'*',
+      })
+    };
+
+    constructor(private http: HttpClient) {
+        marked.setOptions({});
+    }
+
+    /**     
+     * @param project a github project to work with
+     */
+    setProject(project: string) {
+      this.base = this.base.concat(project + '/master');
+      console.log("ReadFileService:setProject: this.base = " + this.base);
+    }
+    
+    /**
+     * retreive a file from github
+     * @param file the relative path of a file in github project
+     */
+    getFile(filename: string) {
+      let fullurl = this.base + '/' + filename; 
+      
+      if (this.cached.has(fullurl)) {
+        return this.cached.get(fullurl);
+      }      
+
+      let file = this.http.get(fullurl, {responseType: 'text'});
+      file.subscribe(data => { 
+          //console.log("ReadFileHttpClientService:getFile: data = " + data);
+          
+          if (data.endsWith('.md')) {
+            this.cached[fullurl] = marked(data);            
+          }
+          else {
+            this.cached[fullurl] = file;
+          }          
+
+          this.fileIsReady.next(data);
+        },
+        (error) => console.log(error)
+      );
+    } 
+
+}

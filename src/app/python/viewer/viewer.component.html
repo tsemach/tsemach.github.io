@@ -1,11 +1,9 @@
 
-<!-- <codemirror [(ngModel)]="code"
-  [config]="config"
-  (focus)="onFocus()"
-  (blur)="onBlur()">
-</codemirror> -->
-<div class="code">
-  <codemirror class="CodeMirror" [(ngModel)]="code"
-    [config]="config">
-  </codemirror>
+<div class="code">  
+  <u><h4 class="h4">File: {{filename}}</h4></u>  
+  <codemirror class="CodeMirror" [(ngModel)]="code" [config]="config"></codemirror>   
+  <!-- <pre><code lang="application/typescript">
+    {{code}}
+  </code></pre> -->
+
 </div>

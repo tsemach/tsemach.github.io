@@ -46,24 +46,13 @@ export class PythonLeftMenuComponent implements OnInit, OnDestroy {
 
     this.fileIsReady.subscribe(
       (data: string) => {
-        this.directories = this.parse(data);
-        //this.directories = [this.directories[0]];
-        //this.directories[0].print();
-        //this.readFileService.fileIsReady.unsubscribe();    
+        this.directories = this.parse(data);       
       }
     );
     this.readFileService.getFile('pyexamples.list', this.fileIsReady);
   }
 
-  parse(filelist) {
-    // let filelist = "\
-    // pyexamples/objects/attribute_02.py\
-    // pyexamples/objects/attribute_05.py\
-    // pyexamples/metaclasses/singelton_01.py\
-    // pyexamples/metaclasses/singelton_02.py\
-    // pyexamples/decorators/property_03.py\
-    // pyexamples/decorators/descriptor_02.py";
-    
+  parse(filelist) {    
     let filesArray = filelist.split(/\r?\n/);
 
     let directories = new Array<Directory>();

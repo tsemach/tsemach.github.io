@@ -23,6 +23,7 @@ import { DropdownDirective } from './tree-view/dropdown.directive';
 import { TypeScriptComponent } from './typescript/typescript.component';
 import { TreeViewComponent } from './tree-view/tree-view.component';
 import { ReadFileHttpClientService } from './services/read-file.httpclient.service';
+import { ViewerChangeDirective } from './python/viewer/viewer-change.directive';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ReadFileHttpClientService } from './services/read-file.httpclient.servi
     PythonLeftMenuComponent,
     DropdownDirective,
     TypeScriptComponent,
-    TreeViewComponent
+    TreeViewComponent,
+    ViewerChangeDirective
   ],
   imports: [
     BrowserModule,

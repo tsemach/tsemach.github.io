@@ -1,4 +1,4 @@
-import 'codemirror/mode/javascript/javascript'; 
+import 'codemirror/mode/python/python'; 
 
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
@@ -16,10 +16,11 @@ export class PythonViewerComponent implements OnInit {
   filename: string;
   code: string = '';
   config={
-    mode: "javascript",
+    mode: "python",
     lineNumbers: true,
     theme: "eclipse",
-    tabSize: 2,      
+    tabSize: 2,  
+    readOnly: true
   };
 
   fileIsReady = new Subject<string>();

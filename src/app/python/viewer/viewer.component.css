@@ -1,8 +1,41 @@
+/* see https://bl.ocks.org/jcla1/2938024 */
+
 .CodeMirror {
   /* border: 1px solid #eee; */
-  height: fit-content;      
+  height: auto;  
+  max-height: 500px;
+      
+}
+
+.CodeMirror-scroll {
+  height: auto;
+  max-height:500px;
+  outline: none;
+
+}
+
+.CodeMirror-sizer {
+  position: relative;
+}
+
+.CodeMirror-linewidget {
+  position: relative;
+  z-index: 2;
+  overflow: auto;
+}
+
+.CodeMirror-widget {
+  display: inline-block;
+}
+
+.CodeMirror-lines {
+  padding: 4px 0; /* Vertical padding around content */
+}
+.CodeMirror pre {
+  padding: 0 4px; /* Horizontal padding of content */
 }
 
 .code {
-  height: 100%; 
+  height: 100%;
+  width: 65%; 
 }

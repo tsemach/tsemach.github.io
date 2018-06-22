@@ -6,9 +6,7 @@ import * as marked from 'marked';
 @Injectable()
 export class ReadFileHttpClientService {
     private base = 'https://raw.githubusercontent.com/tsemach/';
-    private cached = new Map<string, string>();
-
-    public fileIsReady = new Subject();
+    private cached = new Map<string, string>();    
 
     httpOptions = {
       headers: new HttpHeaders({ 
@@ -24,7 +22,7 @@ export class ReadFileHttpClientService {
      * @param project a github project to work with
      */
     setProject(project: string) {
-      this.base = this.base.concat(project + '/master');
+      this.base = 'https://raw.githubusercontent.com/tsemach/'.concat(project + '/master');
       console.log("ReadFileService:setProject: this.base = " + this.base);
     }
     
@@ -32,7 +30,7 @@ export class ReadFileHttpClientService {
      * retreive a file from github
      * @param file the relative path of a file in github project
      */
-    getFile(filename: string) {
+    getFile(filename: string, fileIsReady: Subject<string>) {
       let fullurl = this.base + '/' + filename; 
       
       if (this.cached.has(fullurl)) {
@@ -50,7 +48,7 @@ export class ReadFileHttpClientService {
             this.cached[fullurl] = file;
           }          
 
-          this.fileIsReady.next(data);
+          fileIsReady.next(data);
         },
         (error) => console.log(error)
       );

@@ -1,5 +1,10 @@
+import 'codemirror/mode/javascript/javascript'; 
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { Subject } from 'rxjs/Subject';
+
+import { ReadFileHttpClientService } from '../../services/read-file.httpclient.service';
 
 @Component({
   selector: 'app-python-viewer',
@@ -9,8 +14,19 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class PythonViewerComponent implements OnInit {
 
   filename: string;
+  code: string = '';
+  config={
+    mode: "javascript",
+    lineNumbers: true,
+    theme: "eclipse",
+    tabSize: 2,      
+  };
 
-  constructor(private route: ActivatedRoute) { }
+  fileIsReady = new Subject<string>();
+
+  constructor(private route: ActivatedRoute, private readFileService: ReadFileHttpClientService) { 
+    
+  }
 
   ngOnInit() {
     this.filename = this.route.snapshot.params['filename'];
@@ -19,8 +35,21 @@ export class PythonViewerComponent implements OnInit {
       (params: Params) => {
         console.log("PythonViewerComponent: file = " + params['filename']);
         this.filename = params['filename'];
+        this.getFile(this.filename);
       }
     )
   }
+
+  getFile(filename) {
+    this.readFileService.setProject('pyexamples');
+  
+    this.fileIsReady.subscribe(
+      (data: string) => {
+        this.code = data;    
+      }
+    );
+    //this.readFileService.getFile('pyexamples/coroutines/coroutine_03.py');
+    this.readFileService.getFile(filename, this.fileIsReady);
+    }
 
 }

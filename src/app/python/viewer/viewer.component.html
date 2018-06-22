@@ -1,1 +1,6 @@
-<p>this is viewer {{ filename }}</p>
+
+<codemirror [(ngModel)]="code"
+  [config]="config"
+  (focus)="onFocus()"
+  (blur)="onBlur()">
+</codemirror>

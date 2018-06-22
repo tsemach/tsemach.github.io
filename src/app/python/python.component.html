@@ -29,11 +29,12 @@
 
 <div class="split-simple">
   <split [direction]="direction" gutterSize="7">
-    <split-area size="16">         
+    <split-area size="15">         
       <app-python-left-menu></app-python-left-menu>
     </split-area>
-    <split-area size="84">          
+    <split-area size="85">          
       <app-topbar-nav></app-topbar-nav>
+      <hr>
       <router-outlet></router-outlet> 
     </split-area>
   </split>

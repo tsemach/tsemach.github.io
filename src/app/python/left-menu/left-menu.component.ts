@@ -1,8 +1,10 @@
 import { Component, OnInit, ElementRef, Renderer2, OnDestroy } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
+
 import { TreeViewComponent } from '../../tree-view/tree-view.component';
 import { Directory } from '../../services/directory';
 import { ReadFileHttpClientService } from '../../services/read-file.httpclient.service';
-import { Observable } from 'rxjs/Observable';
 import { ParseProjectFiles } from './left-menu-parser-filelist';
 
 /**
@@ -19,6 +21,8 @@ export class PythonLeftMenuComponent implements OnInit, OnDestroy {
   directories: Array<Directory>;
   htmlPythonFilelist: string = '';
   source = '/python/viewer';
+
+  fileIsReady = new Subject<string>();
 
   constructor(private readFileService: ReadFileHttpClientService) {     
     
@@ -40,14 +44,15 @@ export class PythonLeftMenuComponent implements OnInit, OnDestroy {
     // path is: https://raw.githubusercontent.com/tsemach/pyexamples/master/pyexamples.list
     this.readFileService.setProject('pyexamples');
 
-    this.readFileService.fileIsReady.subscribe(
+    this.fileIsReady.subscribe(
       (data: string) => {
         this.directories = this.parse(data);
         //this.directories = [this.directories[0]];
         //this.directories[0].print();
+        //this.readFileService.fileIsReady.unsubscribe();    
       }
     );
-    this.readFileService.getFile('pyexamples.list');
+    this.readFileService.getFile('pyexamples.list', this.fileIsReady);
   }
 
   parse(filelist) {
@@ -70,7 +75,7 @@ export class PythonLeftMenuComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.readFileService.fileIsReady.unsubscribe();    
+    this.fileIsReady.unsubscribe();    
   }
   
 }

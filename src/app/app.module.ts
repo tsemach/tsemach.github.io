@@ -7,12 +7,13 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { SortableModule } from 'ngx-bootstrap/sortable';
+import { AngularSplitModule } from 'angular-split';
+import { CodemirrorModule } from 'ng2-codemirror';
 
 import { AppComponent } from './app.component';
 import { PythonViewerComponent } from './python/viewer/viewer.component';
 import { HistogramComponent } from './python/histogram/histogram.component';
 import { AppRoutingModule } from './app-routing-module';
-import { AngularSplitModule } from 'angular-split';
 import { PythonComponent } from './python/python.component';
 import { TopbarNavbarBrandComponent } from './python/topbar-navbar-brand/topbar-navbar-brand.component';
 import { TopbarNavComponent } from './python/topbar-nav/topbar-nav.component';
@@ -46,7 +47,8 @@ import { ReadFileHttpClientService } from './services/read-file.httpclient.servi
     BsDropdownModule.forRoot(),
     SortableModule.forRoot(),
     AngularSplitModule,
-    HttpClientModule
+    HttpClientModule,
+    CodemirrorModule
   ],
   providers: [ReadFileHttpClientService],
   bootstrap: [AppComponent]

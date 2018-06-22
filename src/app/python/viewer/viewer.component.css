@@ -1,4 +1,8 @@
 .CodeMirror {
-  /* border: 10px solid #eee; */
-  height: auto;    
+  /* border: 1px solid #eee; */
+  height: fit-content;      
+}
+
+.code {
+  height: 100%; 
 }

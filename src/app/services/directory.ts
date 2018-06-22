@@ -6,11 +6,13 @@ export class DirectoryOld {
   name: string;
   directories: Array<string>;
   files: Array<string>;
+  
 
   constructor(name, directories, files) {
       this.name = name;
       this.files = files;
       this.directories = directories;
+      
   }
 
 }
@@ -20,9 +22,16 @@ export class Directory {
   dirmap = new Map<string, Directory>();  
   directories: Array<Directory>;
   files: Array<string> = new Array<string>();
+  fullpath = '';
 
-  constructor(name) {      
-      this.name = name;      
+  constructor(name, fullpath?) {
+      this.name = name;
+      if (fullpath === undefined || fullpath === '.') {
+        this.fullpath = name;        
+      }
+      else {
+        this.fullpath = fullpath + '/' + name;
+      }
   }
 
   getGetDirMap() {
@@ -33,7 +42,7 @@ export class Directory {
     this.directories = new Array<Directory>();
     
     this.dirmap.forEach((sub: Directory, dir: string) => {
-      //console.log("setDirectories: adding dir = " + dir);
+      
       this.directories.push(sub);
       sub.setDirectories();
     });         
@@ -42,8 +51,8 @@ export class Directory {
   addDirectory(name: string) {
     if (this.dirmap.get(name)) {
       return this.dirmap.get(name);
-    }        
-    this.dirmap.set(name, new Directory(name));    
+    }
+    this.dirmap.set(name, new Directory(name, this.fullpath));
 
     return this.getDirectory(name);
   }

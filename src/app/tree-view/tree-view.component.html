@@ -11,7 +11,7 @@
     <tree-view [directories]="dir.directories" [source]="source"></tree-view>
 
     <div *ngFor="let file of dir.files" class="dropdown-container">
-      <a [routerLink]="[source, file]" class="dropdown-btn">{{ file }} </a>
+      <a [routerLink]="[source, dir.fullpath + '/' + file]" class="dropdown-btn">{{ file }} </a>
     </div>                
 
   </div>  

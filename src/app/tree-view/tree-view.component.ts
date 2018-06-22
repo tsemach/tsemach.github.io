@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class TreeViewComponent implements OnInit {
 
   @Input() directories: Array<Directory>;
-  @Input() source: string;
+  @Input() source: string;  
 
   constructor(private router: Router) { }
 

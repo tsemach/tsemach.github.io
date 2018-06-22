@@ -26,7 +26,7 @@ let filelist = [
 
 
 export class ParseProjectFiles {
-  dirbase = new Directory('base');
+  dirbase = new Directory('.');
 
   constructor() {
   }
@@ -44,7 +44,6 @@ export class ParseProjectFiles {
 
       return;
     }
-    
     let subdir = directory.addDirectory(name);
     this.parseFilePath(filepath, subdir);
   }

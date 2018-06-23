@@ -8,6 +8,14 @@ import { Component, OnInit, Input } from '@angular/core';
 export class PythonDescriptionComponent implements OnInit {
   @Input() description = '';
 
+  config={
+    mode: "text",
+    // lineNumbers: false,
+    // theme: "eclipse",
+    // tabSize: 2,  
+    readOnly: true    
+  };
+
   constructor() { }
 
   ngOnInit() {

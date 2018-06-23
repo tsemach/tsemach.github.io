@@ -60,8 +60,6 @@ export class PythonViewerComponent implements OnInit {
         this.code = this.parser.parse(data);
         this.description = this.parser.description;
         this.output = this.parser.output;
-
-        console.log("emit code change");
       }
     );
     this.readFileService.getFile(filename, this.fileIsReady);

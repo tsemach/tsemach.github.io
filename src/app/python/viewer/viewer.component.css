@@ -6,9 +6,6 @@
   background-color: #615b94;
 }
 
-.cm-s-eclipse {
-  background-color: #615b94;
-}
 
 .h4 {
   margin-left: 33px;
@@ -33,15 +30,11 @@
   margin-bottom: 7px;
 }
 
-
 a {
   color: darkslateblue;  
 }
 
 .split-simple {
-  /* outline: 7px solid #EEEEEF; */
-  /* margin: 10px; */
-
   height: 100%;
   width: 100%;
   left: 0;
@@ -69,16 +62,14 @@ split-area > p {
 .python-right-top {
   height: 100%; 
   margin: 0%;
-  padding: 0%;
-  /* background: aqua; */
+  padding: 0%; 
 }
 
 .python-right-bottom {
   height: 100%; 
   margin: 0%;
   padding: 0%;
-  background: blueviolet;
-}
+ }
 
 .hr {
   margin-top: 0px; 

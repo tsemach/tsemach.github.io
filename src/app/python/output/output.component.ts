@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-python-output',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./output.component.css']
 })
 export class PythonOutputComponent implements OnInit {
+  @Input() code = '';
 
   constructor() { }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-python-description',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./description.component.css']
 })
 export class PythonDescriptionComponent implements OnInit {
+  @Input() code = '';
 
   constructor() { }
 

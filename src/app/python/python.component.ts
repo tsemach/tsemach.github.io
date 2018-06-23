@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
@@ -8,6 +8,8 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./python.component.css']
 })
 export class PythonComponent implements OnInit {
+
+  @Input() code = '';
 
   constructor(private titleService: Title, 
               private router: Router, 
@@ -24,5 +26,9 @@ export class PythonComponent implements OnInit {
 
   onClickHistogram() {
     this.router.navigate(['histogram'], {relativeTo: this.route});
+  }
+
+  onCode(event) {
+    console.log("Python onCode = ");
   }
 }

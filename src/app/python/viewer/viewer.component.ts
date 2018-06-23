@@ -1,7 +1,7 @@
 import 'codemirror/mode/python/python'; 
 import { CodeMirror } from 'codemirror';
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Subject } from 'rxjs/Subject';
 
@@ -17,9 +17,9 @@ import { ReadFileHttpClientService } from '../../services/read-file.httpclient.s
   styleUrls: ['./viewer.component.css']
 })
 export class PythonViewerComponent implements OnInit {
+  code: string = '';
 
   filename: string;
-  code: string = '';
   config={
     mode: "python",
     lineNumbers: true,
@@ -52,11 +52,12 @@ export class PythonViewerComponent implements OnInit {
   
     this.fileIsReady.subscribe(
       (data: string) => {
-        this.code = data;    
+        this.code = data;
+        //this.codeEvent.emit(this.code);
+        console.log("emit code change");
       }
     );
-    //this.readFileService.getFile('pyexamples/coroutines/coroutine_03.py');
     this.readFileService.getFile(filename, this.fileIsReady);
-    }
+  }
 
 }

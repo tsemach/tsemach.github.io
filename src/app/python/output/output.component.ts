@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-python-output',
+  selector: 'app-python-viewer-output',
   templateUrl: './output.component.html',
   styleUrls: ['./output.component.css']
 })

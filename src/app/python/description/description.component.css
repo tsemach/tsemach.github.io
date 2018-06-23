@@ -1,6 +1,7 @@
 .div {
   margin-top: 0px;
-  height: 88%;  
+  height: 100%;   
+  overflow: hidden;
 }
 
 .h4 {

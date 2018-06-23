@@ -13,12 +13,12 @@
   color: blue;
 }
 
-.CodeMirror-lines {
-  padding: 4px 0; /* Vertical padding around content */
+/* .CodeMirror-lines {
+  padding: 4px 0; 
 }
 .CodeMirror pre {
-  padding: 0 4px; /* Horizontal padding of content */
-}
+  padding: 0 4px; 
+} */
 
 .code {
   height: 98%;
@@ -34,21 +34,8 @@ a {
   color: darkslateblue;  
 }
 
-.split-simple {
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
-  overflow: hidden;
-  position: relative; 
-}
-
-split-area > p {
-  padding: 15px;
-}
-
 .python-main {
-  height: 100%; 
+  height: 100%;   
   /* background: black; */
 }
 
@@ -56,13 +43,14 @@ split-area > p {
   height: 100%; 
   margin-bottom: 0%;
   padding-top: 0%;
+  overflow: hidden;
   /* background: aqua;   */
 }
 
 .python-right-top {
   height: 100%; 
   margin: 0%;
-  padding: 0%; 
+  padding: 0%;   
 }
 
 .python-right-bottom {

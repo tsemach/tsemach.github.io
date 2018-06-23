@@ -26,6 +26,7 @@ import { ReadFileHttpClientService } from './services/read-file.httpclient.servi
 import { ViewerChangeDirective } from './python/viewer/viewer-change.directive';
 import { PythonDescriptionComponent } from './python/description/description.component';
 import { PythonOutputComponent } from './python/output/output.component';
+import { AngularComponent } from './angular/angular.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { PythonOutputComponent } from './python/output/output.component';
     TreeViewComponent,
     ViewerChangeDirective,
     PythonDescriptionComponent,
-    PythonOutputComponent
+    PythonOutputComponent,
+    AngularComponent
   ],
   imports: [
     BrowserModule,

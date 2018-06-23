@@ -10,6 +10,7 @@ import { Title } from '@angular/platform-browser';
 export class PythonComponent implements OnInit {
 
   @Input() code = '';
+  direction = 'horizontal';
 
   constructor(private titleService: Title, 
               private router: Router, 

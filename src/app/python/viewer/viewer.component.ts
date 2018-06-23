@@ -6,6 +6,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Subject } from 'rxjs/Subject';
 
 import { ReadFileHttpClientService } from '../../services/read-file.httpclient.service';
+import { PythonCodeParser } from './python-code-parser';
 
 /**
  * checkout https://stackoverflow.com/questions/36467020/codemirror-as-angular2-component
@@ -18,6 +19,9 @@ import { ReadFileHttpClientService } from '../../services/read-file.httpclient.s
 })
 export class PythonViewerComponent implements OnInit {
   code: string = '';
+  description = '';
+  output = '';
+  parser = new PythonCodeParser();
 
   filename: string;
   config={
@@ -52,8 +56,11 @@ export class PythonViewerComponent implements OnInit {
   
     this.fileIsReady.subscribe(
       (data: string) => {
-        this.code = data;
-        //this.codeEvent.emit(this.code);
+        //this.code = data;
+        this.code = this.parser.parse(data);
+        this.description = this.parser.description;
+        this.output = this.parser.output;
+
         console.log("emit code change");
       }
     );

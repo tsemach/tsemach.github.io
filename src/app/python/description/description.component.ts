@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./description.component.css']
 })
 export class PythonDescriptionComponent implements OnInit {
-  @Input() code = '';
+  @Input() description = '';
 
   constructor() { }
 

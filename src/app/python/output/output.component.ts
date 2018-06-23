@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./output.component.css']
 })
 export class PythonOutputComponent implements OnInit {
-  @Input() code = '';
+  @Input() output = '';
 
   constructor() { }
 

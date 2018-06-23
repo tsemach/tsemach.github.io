@@ -23,7 +23,6 @@
     "@types/marked": "^0.4.0",
     "angular-split": "^1.0.0-rc.3",
     "bootstrap": "^4.1.1",
-    "codemirror": "^5.39.0",
     "core-js": "^2.5.4",
     "font-awesome": "^4.7.0",
     "marked": "^0.4.0",

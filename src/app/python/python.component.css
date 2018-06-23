@@ -1,18 +1,3 @@
-
-/* level 1*/
-/* #sidebar .list-group .collapse .list-group-item  {
-  padding-left: 20px;
-} */
-
-/* level 2*/
-/* #sidebar .list-group .collapse > .collapse .list-group-item {
-  padding-left: 30px;
-} */
-
-/* level 3*/
-/* #sidebar .list-group .collapse > .collapse > .collapse .list-group-item {
-  padding-left: 40px;
-} */
 a {
   color: darkslateblue;  
 }
@@ -46,4 +31,11 @@ sp-ex-changelog p {
 
 split-area > p {
   padding: 15px;
+}
+
+/* .split-right-top {
+  background: black;
+} */
+.split-right-top-gutter {
+  background: black;
 }

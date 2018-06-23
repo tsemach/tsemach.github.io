@@ -35,7 +35,43 @@
     <split-area size="88" disabled=true>          
       <app-topbar-nav></app-topbar-nav>
       <hr>
-      <router-outlet></router-outlet> 
+
+      <split direction="horizontal" gutterSize="5">
+        <!-- this is the area of the code-->          
+        <split-area size="60">
+          <router-outlet></router-outlet> 
+        </split-area>
+        
+        <!-- this the area of the right top/bottom-->
+        <split-area size="40">        
+          <!-- split the right side into two top and bottom for decription and output -->
+          <split class="split-right" direction="vertical" gutterSize="5">
+                        
+            <split-area class="split-area-right-top">
+              <!-- here is right-top content -->
+              <p>Lm ipsum dolo ullamco la pariatur.</p>
+            </split-area>          
+
+            <split-area class="split-area-right-buttom">
+              <!-- here is right-button content -->
+              <p>Lorem ipsum dolo, co nulla pariatur.</p>                 
+            </split-area>
+
+          </split>
+        </split-area>
+      </split>
+
+
+      <!-- <div class="row">
+        <div class="col-md-10">
+          <router-outlet></router-outlet> 
+        </div>
+        <div class="col-md-2">
+          <textarea>sdvsdv</textarea>
+        </div>
+      </div> -->
+
+
     </split-area>
   </split>
 </div>

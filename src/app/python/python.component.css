@@ -2,21 +2,6 @@ a {
   color: darkslateblue;  
 }
 
-/* sp-ex-changelog h1 {
-  font-size: 24px;
-  border-bottom: 1px solid #ddd;
-  color: #777777;
-  padding-bottom: 15px;
-  margin-top: 35px;
-} */
-
-/* sp-ex-changelog h3 {
-  font-size: 20px;
-}
-sp-ex-changelog p {
-  font-size: 16px;
-} */
-
 .split-simple {
   /* outline: 7px solid #EEEEEF; */
   /* margin: 10px; */
@@ -33,9 +18,33 @@ split-area > p {
   padding: 15px;
 }
 
-/* .split-right-top {
-  background: black;
-} */
-.split-right-top-gutter {
-  background: black;
+.python-main {
+  height: 100%; 
+  /* background: black; */
+}
+
+.python-right {
+  height: 100%; 
+  margin-bottom: 0%;
+  padding-top: 0%;
+  /* background: aqua;   */
+}
+
+.python-right-top {
+  height: 100%; 
+  margin: 0%;
+  padding: 0%;
+  /* background: aqua; */
+}
+
+.python-right-bottom {
+  height: 100%; 
+  margin: 0%;
+  padding: 0%;
+  background: blueviolet;
+}
+
+.hr {
+  margin-top: 0px; 
+  margin-bottom: 0px;
 }

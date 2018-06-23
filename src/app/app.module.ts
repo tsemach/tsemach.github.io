@@ -24,6 +24,8 @@ import { TypeScriptComponent } from './typescript/typescript.component';
 import { TreeViewComponent } from './tree-view/tree-view.component';
 import { ReadFileHttpClientService } from './services/read-file.httpclient.service';
 import { ViewerChangeDirective } from './python/viewer/viewer-change.directive';
+import { PythonDescriptionComponent } from './python/description/description.component';
+import { PythonOutputComponent } from './python/output/output.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { ViewerChangeDirective } from './python/viewer/viewer-change.directive';
     DropdownDirective,
     TypeScriptComponent,
     TreeViewComponent,
-    ViewerChangeDirective
+    ViewerChangeDirective,
+    PythonDescriptionComponent,
+    PythonOutputComponent
   ],
   imports: [
     BrowserModule,

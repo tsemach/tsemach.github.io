@@ -32,35 +32,36 @@
     <split-area size="12">         
       <app-python-left-menu></app-python-left-menu>
     </split-area>
-    <split-area size="88" disabled=true>          
+    <split-area size="88" disabled=true>
       <app-topbar-nav></app-topbar-nav>
-      <hr>
+  
+        <split direction="horizontal" gutterSize="5" class="python-main">
+          <!-- this is the area of the code-->          
+          <split-area size="60">
+            <hr class="hr">
+            <router-outlet></router-outlet> 
+          </split-area>
+          
+          <!-- this the area of the right top/bottom-->
+          <split-area size="40" class="python-right">
+            <hr class="hr">
+            <!-- split the right side into two top and bottom for decription and output -->
+            <split class="split-right" direction="vertical" gutterSize="5">
+              <hr class="hr">
+              <split-area class="python-right-top">
+                <!-- here is right-top content -->
+                <app-python-description></app-python-description>
+              </split-area>          
 
-      <split direction="horizontal" gutterSize="5">
-        <!-- this is the area of the code-->          
-        <split-area size="60">
-          <router-outlet></router-outlet> 
-        </split-area>
-        
-        <!-- this the area of the right top/bottom-->
-        <split-area size="40">        
-          <!-- split the right side into two top and bottom for decription and output -->
-          <split class="split-right" direction="vertical" gutterSize="5">
-                        
-            <split-area class="split-area-right-top">
-              <!-- here is right-top content -->
-              <p>Lm ipsum dolo ullamco la pariatur.</p>
-            </split-area>          
+              <split-area class="python-right-bottom">
+                <!-- here is right-button content -->
+                <app-python-output></app-python-output>
+              </split-area>
 
-            <split-area class="split-area-right-buttom">
-              <!-- here is right-button content -->
-              <p>Lorem ipsum dolo, co nulla pariatur.</p>                 
-            </split-area>
-
-          </split>
-        </split-area>
-      </split>
-
+            </split>
+          </split-area>
+    
+        </split>
 
       <!-- <div class="row">
         <div class="col-md-10">

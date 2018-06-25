@@ -12,7 +12,6 @@ import { CodemirrorModule } from 'ng2-codemirror';
 
 import { AppComponent } from './app.component';
 import { PythonViewerComponent } from './python/viewer/viewer.component';
-import { HistogramComponent } from './python/histogram/histogram.component';
 import { AppRoutingModule } from './app-routing-module';
 import { PythonComponent } from './python/python.component';
 import { TopbarNavbarBrandComponent } from './python/topbar-navbar-brand/topbar-navbar-brand.component';
@@ -27,12 +26,12 @@ import { ViewerChangeDirective } from './python/viewer/viewer-change.directive';
 import { PythonDescriptionComponent } from './python/description/description.component';
 import { PythonOutputComponent } from './python/output/output.component';
 import { AngularComponent } from './angular/angular.component';
+import { AngularCardMenuComponent } from './angular/card-menu/card-menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PythonViewerComponent,
-    HistogramComponent,
     PythonComponent,
     TopbarNavbarBrandComponent,
     TopbarNavComponent,
@@ -44,7 +43,8 @@ import { AngularComponent } from './angular/angular.component';
     ViewerChangeDirective,
     PythonDescriptionComponent,
     PythonOutputComponent,
-    AngularComponent
+    AngularComponent,
+    AngularCardMenuComponent
   ],
   imports: [
     BrowserModule,

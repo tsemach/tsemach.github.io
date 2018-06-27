@@ -26,7 +26,8 @@ import { ViewerChangeDirective } from './python/viewer/viewer-change.directive';
 import { PythonDescriptionComponent } from './python/description/description.component';
 import { PythonOutputComponent } from './python/output/output.component';
 import { AngularComponent } from './angular/angular.component';
-import { AngularCardMenuComponent } from './angular/card-menu/card-menu.component';
+import { AngularProjectComponent } from './angular/project/project.component';
+import { AngularFileMenuComponent } from './angular/file-menu/file-menu.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { AngularCardMenuComponent } from './angular/card-menu/card-menu.componen
     PythonDescriptionComponent,
     PythonOutputComponent,
     AngularComponent,
-    AngularCardMenuComponent
+    AngularProjectComponent,
+    AngularFileMenuComponent,
   ],
   imports: [
     BrowserModule,

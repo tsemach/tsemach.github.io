@@ -5,7 +5,7 @@ import { Subject } from 'rxjs/Subject';
 import { TreeViewComponent } from '../../tree-view/tree-view.component';
 import { Directory } from '../../services/directory';
 import { ReadFileHttpClientService } from '../../services/read-file.httpclient.service';
-import { ParseProjectFiles } from './left-menu-parser-filelist';
+import { ParseProjectFiles } from '../../services/parser-filelist';
 
 /**
  * example of file URL: https://raw.githubusercontent.com/tsemach/pyexamples/master/pyexamples.list

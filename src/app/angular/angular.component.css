@@ -1,0 +1,50 @@
+a {
+  color: darkslateblue;  
+}
+
+.split-simple {
+  /* outline: 7px solid #EEEEEF; */
+  /* margin: 10px; */
+
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  position: relative; 
+}
+
+split-area > p {
+  padding: 15px;
+}
+
+.python-main {
+  height: 100%; 
+  /* background: black; */
+}
+
+.python-right {
+  height: 100%; 
+  margin-bottom: 0%;
+  padding-top: 0%;
+  /* background: aqua;   */
+}
+
+.python-right-top {
+  height: 100%; 
+  margin: 0%;
+  padding: 0%;
+  /* background: aqua; */
+}
+
+.python-right-bottom {
+  height: 100%; 
+  margin: 0%;
+  padding: 0%;
+  background: blueviolet;
+}
+
+.hr {
+  margin-top: 0px; 
+  margin-bottom: 0px;
+}

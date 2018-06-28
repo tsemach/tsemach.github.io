@@ -65,6 +65,7 @@ export class Directory {
   }
   
   addFile(name: string) {
+    console.log("Directory:addFile: this.name = <" + this.name + ">, name = " + name);
     this.files.push(name);
   }
 
@@ -76,7 +77,8 @@ export class Directory {
       tabs = tabs + "\t";
     }
     for (let f in this.files) {
-      if (this.name  !== '.' && this.files[f].length > 0) {
+      //if (this.name  !== '.' && this.files[f].length > 0) {
+      if (this.files[f].length > 0) {
         console.log(tabs + this.files[f]);
       }
     }

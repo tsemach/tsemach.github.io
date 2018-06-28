@@ -26,7 +26,7 @@ export class AngularFileMenuComponent implements OnInit, OnDestroy {
 
     this.fileIsReady.subscribe(
       (data: string) => {
-        this.directories = this.parse(data);       
+        this.directories = this.parse(data);
       }
     );
     this.readFileService.getFile('project.list', this.fileIsReady);
@@ -39,8 +39,9 @@ export class AngularFileMenuComponent implements OnInit, OnDestroy {
     let parser = new ParseProjectFiles();
 
     let basedir = parser.parse(filesArray); 
-    
-    return [basedir.directories[0]];     
+    basedir.print();
+
+    return [basedir];     
   }
 
   ngOnDestroy() {

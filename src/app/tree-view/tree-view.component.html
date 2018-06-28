@@ -3,7 +3,7 @@
 
 <div *ngFor="let dir of directories">
   
-  <button class="dropdown-btn" appDropdownDirective>{{ dir.name }} 
+  <button class="dropdown-btn" *ngIf="dir.name !== '.'" appDropdownDirective>{{ dir.name }} 
     <i class="fa fa-caret-down"></i>
   </button>  
 

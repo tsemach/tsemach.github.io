@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 
 import { TreeViewComponent } from '../../tree-view/tree-view.component';
@@ -12,6 +12,8 @@ import { ParseProjectFiles } from '../../services/parser-filelist';
   styleUrls: ['./file-menu.component.css']
 })
 export class AngularFileMenuComponent implements OnInit, OnDestroy {
+  @Input() name = '';
+
   directories: Array<Directory>;
   htmlPythonFilelist: string = '';
   source = '/angular/project';
@@ -22,7 +24,8 @@ export class AngularFileMenuComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     // path is: https://raw.githubusercontent.com/tsemach/pyexamples/master/pyexamples.list
-    this.readFileService.setProject('angular-http-client');
+    this.readFileService.setProject(this.name);
+    this.source = '/angular/project/' + this.name;
 
     this.fileIsReady.subscribe(
       (data: string) => {
@@ -30,6 +33,7 @@ export class AngularFileMenuComponent implements OnInit, OnDestroy {
       }
     );
     this.readFileService.getFile('project.list', this.fileIsReady);
+    console.log("AngularFileMenuComponent: project source = " + this.source);
   }
 
   parse(filelist) {    
@@ -39,9 +43,9 @@ export class AngularFileMenuComponent implements OnInit, OnDestroy {
     let parser = new ParseProjectFiles();
 
     let basedir = parser.parse(filesArray); 
-    basedir.print();
+    //basedir.print();
 
-    return [basedir];     
+    return [basedir];
   }
 
   ngOnDestroy() {

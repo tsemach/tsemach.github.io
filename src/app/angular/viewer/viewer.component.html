@@ -1,0 +1,18 @@
+<split direction="horizontal" gutterSize="5" class="python-main">  
+
+  <split-area size="60" style="background: #d9d9d9;">
+    <hr class="hr">
+    <div class="code" style="background: #d9d9d9;">  
+      <h3 class="h3">{{filename}}</h3>
+      <codemirror class="CodeMirror" [(ngModel)]="code" [config]="config"></codemirror>                         
+    </div>        
+  </split-area>
+            
+</split>
+  
+<!-- 
+<hr class="hr">
+<div class="code" style="background: #d9d9d9;">  
+  <u><h4 class="h4">File: {{filename}}</h4></u>  
+  <codemirror class="CodeMirror" [(ngModel)]="code" [config]="config"></codemirror>                         
+</div>         -->

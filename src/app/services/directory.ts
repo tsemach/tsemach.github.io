@@ -65,7 +65,7 @@ export class Directory {
   }
   
   addFile(name: string) {
-    console.log("Directory:addFile: this.name = <" + this.name + ">, name = " + name);
+    //console.log("Directory:addFile: this.name = <" + this.name + ">, name = " + name);
     this.files.push(name);
   }
 

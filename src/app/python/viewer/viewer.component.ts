@@ -45,7 +45,7 @@ export class PythonViewerComponent implements OnInit {
     this.route.params.subscribe(
       (params: Params) => {
         //console.log("PythonViewerComponent: file = " + params['filename']);
-        this.filename = params['filename'];
+        this.filename = params['filename'];        
         this.getFile(this.filename);
       }
     )

@@ -28,6 +28,7 @@ import { PythonOutputComponent } from './python/output/output.component';
 import { AngularComponent } from './angular/angular.component';
 import { AngularProjectComponent } from './angular/project/project.component';
 import { AngularFileMenuComponent } from './angular/file-menu/file-menu.component';
+import { AngularViewerComponent } from './angular/viewer/viewer.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { AngularFileMenuComponent } from './angular/file-menu/file-menu.componen
     AngularComponent,
     AngularProjectComponent,
     AngularFileMenuComponent,
+    AngularViewerComponent,
   ],
   imports: [
     BrowserModule,

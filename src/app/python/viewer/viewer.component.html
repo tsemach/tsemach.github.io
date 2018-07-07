@@ -6,31 +6,31 @@
 
 <split direction="horizontal" gutterSize="5" class="python-main">  
 
-    <split-area size="60">
-      <hr class="hr">
-      <div class="code">  
-          <u><h4 class="h4">File: {{filename}}</h4></u>  
-          <codemirror class="CodeMirror" [(ngModel)]="code" [config]="config"></codemirror>                         
-        </div>        
-    </split-area>
+  <split-area size="60">
+    <hr class="hr">
+    <div class="code">  
+      <u><h4 class="h4">File: {{filename}}</h4></u>  
+      <codemirror class="CodeMirror" [(ngModel)]="code" [config]="config"></codemirror>                         
+    </div>        
+  </split-area>
       
-    <split-area size="40" class="python-right">
+  <split-area size="40" class="python-right">
+    <hr class="hr">
+    <split class="split-right" direction="vertical" gutterSize="5">
       <hr class="hr">
-      <split class="split-right" direction="vertical" gutterSize="5">
-        <hr class="hr">
 
-        <split-area size="30" class="python-right-top">          
-          <app-python-viewer-description [description]="description"></app-python-viewer-description>
-        </split-area>          
+      <split-area size="30" class="python-right-top">          
+        <app-python-viewer-description [description]="description"></app-python-viewer-description>
+      </split-area>          
   
-        <split-area site="70" class="python-right-bottom">
-          <app-python-viewer-output [output]="output"></app-python-viewer-output>
-        </split-area>
+      <split-area site="70" class="python-right-bottom">
+        <app-python-viewer-output [output]="output"></app-python-viewer-output>
+      </split-area>
   
-      </split>
-    </split-area>
+    </split>
+  </split-area>
   
-  </split>
+</split>
 
 
 

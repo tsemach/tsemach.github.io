@@ -44,8 +44,8 @@ export class AngularViewerComponent implements OnInit {
         
         this.filename = params['filename'];
         
-        console.log(`AngularViewerComponent: project = ${this.projectNameService.name}`);
-        console.log(`AngularViewerComponent: filename = ${this.filename}`);
+        // console.log(`AngularViewerComponent: project = ${this.projectNameService.name}`);
+        // console.log(`AngularViewerComponent: filename = ${this.filename}`);
 
         this.getFile(this.filename);
       }
@@ -54,14 +54,14 @@ export class AngularViewerComponent implements OnInit {
     this.projectNameService.nameUpdated.subscribe(
       (name: string) => { 
         this.name = name;
-        console.log(`AngularViewerComponent: project = ${this.name}`);
-        console.log(`AngularViewerComponent: filename = ${this.filename}`);
+        // console.log(`AngularViewerComponent: project = ${this.name}`);
+        // console.log(`AngularViewerComponent: filename = ${this.filename}`);
       });
   }
 
   getFile(filename) {
-    console.log(`AngularViewerComponent:getFile: project = ${this.name}`);
-    console.log(`AngularViewerComponent:getFile: filename = ${this.filename}`);
+    // console.log(`AngularViewerComponent:getFile: project = ${this.name}`);
+    // console.log(`AngularViewerComponent:getFile: filename = ${this.filename}`);
     this.readFileService.setProject(this.name);
   
     this.fileIsReady.subscribe(

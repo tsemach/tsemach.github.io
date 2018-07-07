@@ -33,7 +33,7 @@ export class AngularFileMenuComponent implements OnInit, OnDestroy {
       }
     );
     this.readFileService.getFile('project.list', this.fileIsReady);
-    console.log("AngularFileMenuComponent: project source = " + this.source);
+    //console.log("AngularFileMenuComponent: project source = " + this.source);
   }
 
   parse(filelist) {    

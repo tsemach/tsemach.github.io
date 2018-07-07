@@ -17,7 +17,9 @@ export class AngularProjectComponent implements OnInit, OnDestroy {
 
   directories: Array<Directory>;
   htmlProjectFilelist: string = '';
+  name: string;
   source: string;
+  direction = 'horizontal';
 
   constructor(private route:ActivatedRoute, 
               private readFileService: ReadFileHttpClientService,
@@ -26,12 +28,13 @@ export class AngularProjectComponent implements OnInit, OnDestroy {
   ngOnInit() {    
     this.route.params.subscribe(
       (params: Params) => {
-        this.projectNameService.name = params['name'];
-        this.projectNameService.nameUpdated.emit(this.projectNameService.name);
-        this.source = '/angular/project/' + this.projectNameService.name;
-        console.log("AngularProjectComponent: name = "  + this.projectNameService.name);
+        this.name = params['name'];
+        this.projectNameService.name = this.name;
+        this.projectNameService.nameUpdated.emit(this.name);
+        this.source = '/angular/project/' + this.name;
+        console.log("AngularProjectComponent: name = "  + this.name);
         console.log("AngularProjectComponent: source = " + this.source);
-        this.getFile(this.projectNameService.name);        
+        this.getFile(this.name);        
       }
      )
   }

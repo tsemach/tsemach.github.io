@@ -12,10 +12,8 @@ export class PythonComponent implements OnInit {
   @Input() code = '';
   direction = 'horizontal';
 
-  constructor(private titleService: Title, 
-              private router: Router, 
+  constructor(private router: Router, 
               private route: ActivatedRoute) {
-    titleService.setTitle('Monitor');
   }
 
   ngOnInit() {

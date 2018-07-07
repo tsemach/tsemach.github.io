@@ -33,14 +33,13 @@ export class ReadFileHttpClientService {
     getFile(filename: string, fileIsReady: Subject<string>) {
       let fullurl = this.base + '/' + filename; 
       
+      console.log("ReadFileHttpClientService:getFile: fillurl = " + fullurl);
       if (this.cached.has(fullurl)) {
         return this.cached.get(fullurl);
       }      
 
       let file = this.http.get(fullurl, {responseType: 'text'});
-      file.subscribe(data => { 
-          //console.log("ReadFileHttpClientService:getFile: data = " + data);
-          
+      file.subscribe(data => {           
           if (data.endsWith('.md')) {
             this.cached[fullurl] = marked(data);            
           }

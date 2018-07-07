@@ -4,37 +4,44 @@ import { ReadFileHttpClientService } from '../../services/read-file.httpclient.s
 import { Subject } from 'rxjs/Subject';
 import { Directory } from '../../services/directory';
 import { ParseProjectFiles } from '../../services/parser-filelist';
+import { AngularProjectNameService } from '../project/project-name.service';
 
 @Component({
   selector: 'app-angular-project',
   templateUrl: './project.component.html',
-  styleUrls: ['./project.component.css']
+  styleUrls: ['./project.component.css'],
+  providers: [AngularProjectNameService]
 })
 export class AngularProjectComponent implements OnInit, OnDestroy {
-  name = '';
   fileIsReady = new Subject<string>();
 
   directories: Array<Directory>;
   htmlProjectFilelist: string = '';
-  source = '/angular/project/' + this.name;
+  source: string;
 
-  constructor(private route:ActivatedRoute, private readFileService: ReadFileHttpClientService) { }
+  constructor(private route:ActivatedRoute, 
+              private readFileService: ReadFileHttpClientService,
+              private projectNameService: AngularProjectNameService) { }
 
-  ngOnInit() {
+  ngOnInit() {    
     this.route.params.subscribe(
       (params: Params) => {
-        this.name = params['name'];
-        this.getFile(this.name);
+        this.projectNameService.name = params['name'];
+        this.projectNameService.nameUpdated.emit(this.projectNameService.name);
+        this.source = '/angular/project/' + this.projectNameService.name;
+        console.log("AngularProjectComponent: name = "  + this.projectNameService.name);
+        console.log("AngularProjectComponent: source = " + this.source);
+        this.getFile(this.projectNameService.name);        
       }
      )
   }
 
-  getFile(name) {
+  getFile(name) {    
     this.readFileService.setProject(name);
   
     this.fileIsReady.subscribe(
       (data: string) => {
-        console.log("AngularProjectComponent: data = " + data);
+        //console.log("AngularProjectComponent: data = " + data);
         this.directories = this.parse(data); 
       }
     );

@@ -1,0 +1,11 @@
+  
+.CodeMirror {
+  /* border: 1px solid #eee; */
+  height: 700px;   
+  background-color: #615b94;
+}
+
+.h3 {
+  font-family: monospace;
+  color: blue;  
+}

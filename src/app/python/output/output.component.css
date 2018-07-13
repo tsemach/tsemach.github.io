@@ -2,7 +2,6 @@
   overflow-x: hidden;   
   margin-top: 0px; 
   height: 100%;
-  background:   lavender
 }
 
 .h4 {
@@ -10,6 +9,5 @@
   margin-bottom: 0px;
   padding-bottom: 10px;
   font-family: monospace;
-  background:   lavender;
   color: blue;
 }

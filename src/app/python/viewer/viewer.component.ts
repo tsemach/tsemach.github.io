@@ -21,6 +21,7 @@ export class PythonViewerComponent implements OnInit {
   code: string = '';
   description = '';
   output = '';
+  from = '';
   parser = new PythonCodeParser();
 
   filename: string;
@@ -55,11 +56,12 @@ export class PythonViewerComponent implements OnInit {
     this.readFileService.setProject('pyexamples');
   
     this.fileIsReady.subscribe(
-      (data: string) => {
-        //this.code = data;
+      (data: string) => {        
         this.code = this.parser.parse(data);
         this.description = this.parser.description;
         this.output = this.parser.output;
+        this.from = this.parser.from;
+        console.log("ViEWER: from.length = " + this.from.length);
       }
     );
     this.readFileService.getFile(filename, this.fileIsReady);

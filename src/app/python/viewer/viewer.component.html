@@ -17,16 +17,11 @@
   <split-area size="40" class="python-right">
     <hr class="hr">
     <split class="split-right" direction="vertical" gutterSize="5">
-      <hr class="hr">
-
-      <split-area size="30" class="python-right-top">          
-        <app-python-viewer-description [description]="description"></app-python-viewer-description>
-      </split-area>          
-  
-      <split-area site="70" class="python-right-bottom">
-        <app-python-viewer-output [output]="output"></app-python-viewer-output>
-      </split-area>
-  
+      <hr class="hr">            
+      <!-- <div class="card m-1 m-1 text-left"> -->
+        <app-python-viewer-description [description]="description" [from]="from"></app-python-viewer-description>      
+        <app-python-viewer-output [output]="output"></app-python-viewer-output>      
+      <!-- </div> -->
     </split>
   </split-area>
   

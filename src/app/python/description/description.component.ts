@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PythonDescriptionComponent implements OnInit {
   @Input() description = '';
+  @Input() from = '';
 
   constructor() { }
 

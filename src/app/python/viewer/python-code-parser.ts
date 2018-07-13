@@ -4,6 +4,7 @@ export class PythonCodeParser {
   _code = '';
   _description = '';
   _output = '';
+  _from = '';
 
   constructor() {
   }
@@ -32,6 +33,10 @@ export class PythonCodeParser {
     this._code = _code;
   }
 
+  get from() { 
+    return this._from;
+  }
+
   toString(a: Array<string>) {
     let s = '';
     a.forEach(e => {
@@ -46,11 +51,12 @@ export class PythonCodeParser {
   parse(_code: string) {
     let state =  1;
     let code = '';
+    this._from = '';
     
     let a = _code.split('\n');
     let descriptionArray = new Array<string>();
     let outputArray = new Array<string>();
-    let codeArray = new Array<string>();
+    let codeArray = new Array<string>();    
 
     // a.forEach(e => {
     //   console.log("line is: " + e);      
@@ -73,7 +79,9 @@ export class PythonCodeParser {
   
           break;
         }
-        if (e.includes('from: ')) {          
+        if (e.includes('from: ')) {
+          console.log(`PARSE: found from: ${e.split(' ')[1]}`);
+          this._from = e.split(' ')[1];
         }
         descriptionArray.push(e);
         codeArray.push(e);

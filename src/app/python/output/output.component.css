@@ -11,3 +11,8 @@
   font-family: monospace;
   color: blue;
 }
+
+::selection {
+  color: red;
+  background: rgb(184, 184, 196);
+}

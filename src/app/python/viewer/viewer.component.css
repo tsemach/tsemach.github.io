@@ -3,9 +3,10 @@
 .CodeMirror {
   /* border: 1px solid #eee; */
   height: 700px; 
-  background-color: #615b94;
+  /* background-color: #615b94;  */
+  background-color: rgb(240, 247, 248);  
+ 
 }
-
 
 .h4 {
   margin-left: 33px;
@@ -31,7 +32,7 @@
 }
 
 a {
-  color: darkslateblue;  
+  color: darkslateblue;    
 }
 
 .python-main {
@@ -61,5 +62,5 @@ a {
 
 .hr {
   margin-top: 0px; 
-  margin-bottom: 0px;
+  margin-bottom: 0px;  
 }

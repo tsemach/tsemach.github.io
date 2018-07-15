@@ -7,6 +7,7 @@
           <h5 class="card-title">{{card.title}}</h5>
           <p class="card-text">{{card.heading}}</p>      
           <a [routerLink]="['/angular/project', card.project]" href="#" style="margin: 20px">Explore</a>
+          <a *ngIf="card.tutorial" [routerLink]="[card.tutorial]" href="#" style="margin: 20px">Tutrial</a>
           <!-- <img src="assets/img/github_log.png" alt="Code"> -->
         </div>
         <div class="card-footer">

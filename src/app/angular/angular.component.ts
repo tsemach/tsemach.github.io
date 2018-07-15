@@ -12,7 +12,8 @@ export class AngularComponent implements OnInit {
         title: 'Observer',
         heading: 'An example of using Observers and Subjects',
         name: 'observers',
-        project: 'angular-observers'
+        project: 'angular-observers',
+        tutorial: 'observer/tutorial'
       },
       {
         title: 'Http Client',

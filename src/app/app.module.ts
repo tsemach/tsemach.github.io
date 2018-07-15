@@ -29,6 +29,7 @@ import { AngularComponent } from './angular/angular.component';
 import { AngularProjectComponent } from './angular/project/project.component';
 import { AngularFileMenuComponent } from './angular/file-menu/file-menu.component';
 import { AngularViewerComponent } from './angular/viewer/viewer.component';
+import { AngularObserverTutorialComponent } from './angular/observer-tutorial/observer-tutorial.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { AngularViewerComponent } from './angular/viewer/viewer.component';
     AngularProjectComponent,
     AngularFileMenuComponent,
     AngularViewerComponent,
+    AngularObserverTutorialComponent,
   ],
   imports: [
     BrowserModule,

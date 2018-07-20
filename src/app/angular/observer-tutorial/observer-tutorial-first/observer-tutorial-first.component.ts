@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { AsyncAction } from 'rxjs/internal/scheduler/AsyncAction';
 
 @Component({
-  selector: 'app-angular-observer-tutorial',
-  templateUrl: './observer-tutorial.component.html',
-  styleUrls: ['./observer-tutorial.component.css']
+  selector: 'app-angular-observer-tutorial-first',
+  templateUrl: './observer-tutorial-first.component.html',
+  styleUrls: ['./observer-tutorial-first.component.css']
 })
-export class AngularObserverTutorialComponent implements OnInit {
+export class AngularObserverTutorialFirstComponent implements OnInit {
   config_code = {    
     lineNumbers: true,    
     tabSize: 2,  
@@ -46,15 +45,15 @@ export class AngularObserverTutorialComponent implements OnInit {
    * the error and the complation.
    */
   this.customObservableSubscription = myObservable.subscribe(
-    (data: s<!-- <div class="vl mx-4" style="height: 50px;"></div>tring) => { console.log(data) },
-    (error: <div class="hl mx-4" style="width: 50px"> </div>   -->string) => { console.log(error) },
+    (data: string) => { console.log(data) },
+    (error: string) => { console.log(error) },
     () => { console.log('completed')}
   );
   `;
 
   first_define_observable_explain_1 = 
   `
-  Use 'Observable.create' function from 'rxjs/Observable' to 
+  'Observerable': Use 'Observable.create' function from 'rxjs/Observable' to 
   create an observable.
   Note it take an Observer as it aurgument. 
   An observer is the one that subscript (listen) to data packages coming 
@@ -72,7 +71,8 @@ export class AngularObserverTutorialComponent implements OnInit {
 
   first_define_observable_explain_2 = 
   `
-  Observer: this is the receiving part. It subscribe to data coming on the first method.
+  'Observer': this is the receiving part. It subscribe to data coming on the first method.
+  
   Also listen to error event and completion on the second and
   third methods.
   `;
@@ -99,12 +99,7 @@ export class AngularObserverTutorialComponent implements OnInit {
       this.first_define_observable_code_2,
       this.first_define_observable_explain_2
     );
-    
-
-    // this.define_observable_explain.padEnd(
-    // this.define_observable_code.split('\n').length - this.define_observable_explain.split('\n').length,
-    // '\n'
-    // );
+     
   }
 
   adjectLines(src: string, dst: string) {
@@ -121,4 +116,3 @@ export class AngularObserverTutorialComponent implements OnInit {
   }
 
 }
- 

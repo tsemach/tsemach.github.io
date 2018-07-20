@@ -29,7 +29,7 @@
   flex-grow: 1;
   height: 1px;
   background: black;
-  position: relative;
+  position: relative; 
 }
 
 .line.arrow-right:after {

@@ -1,28 +1,20 @@
-.vl {
-  border-left: 1px solid black;
-}
-.hl {
-  border-top: 1px solid black;
+p {
+  margin: 5px;
+  padding: 0px;
 }
 
-.CodeMirror {
-  /* border: 1px solid #eee; */
-  /* background-color: #615b94; */
-  background-color: rgb(45, 231, 250);    
+hr {
+  border: none;
+  height: 1px;
+  color: #333;
+  background-color: #333; 
 }
 
-.v-line-container {
+.line-container {
   display: flex;
-  margin: 17px ;
+  width: 100%;
+  margin: 17px auto;
   align-items: center;
-  transform: rotate(90deg);
-}
-
-.h-line-container {
-  display: flex;
-  margin: 17px ;
-  align-items: center;
-  transform: rotate(0deg);
 }
 
 .line {
@@ -54,4 +46,8 @@
   border-top: 7px solid transparent;
   border-bottom: 7px solid transparent;
   border-right: 7px solid black;
+}
+
+label {
+  margin: 0 15px;
 }

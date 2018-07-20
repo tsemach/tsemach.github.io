@@ -30,6 +30,9 @@ import { AngularProjectComponent } from './angular/project/project.component';
 import { AngularFileMenuComponent } from './angular/file-menu/file-menu.component';
 import { AngularViewerComponent } from './angular/viewer/viewer.component';
 import { AngularObserverTutorialComponent } from './angular/observer-tutorial/observer-tutorial.component';
+import { AngularObserverTutorialHeaderComponent } from './angular/observer-tutorial/observer-tutorial-header/observer-tutorial-header.component';
+import { AngularObserverTutorialFirstComponent } from './angular/observer-tutorial/observer-tutorial-first/observer-tutorial-first.component';
+import { AngularObserverTutorialSecondComponent } from './angular/observer-tutorial/observer-tutorial-second/observer-tutorial-second.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +54,9 @@ import { AngularObserverTutorialComponent } from './angular/observer-tutorial/ob
     AngularFileMenuComponent,
     AngularViewerComponent,
     AngularObserverTutorialComponent,
+    AngularObserverTutorialHeaderComponent,
+    AngularObserverTutorialFirstComponent,
+    AngularObserverTutorialSecondComponent,
   ],
   imports: [
     BrowserModule,

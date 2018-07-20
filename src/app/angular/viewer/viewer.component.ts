@@ -20,7 +20,7 @@ export class AngularViewerComponent implements OnInit {
   filename: string;
 
   config={
-    mode: "python",
+    mode: "javascript",
     lineNumbers: true,
     theme: "eclipse",
     tabSize: 2,  

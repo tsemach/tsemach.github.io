@@ -18,6 +18,13 @@ export class ReadFileHttpClientService {
         marked.setOptions({});
     }
 
+    /**
+     * 
+     */
+    setBaseUrl(base: string) {
+      this.base = base;
+    }
+
     /**     
      * @param project a github project to work with
      */

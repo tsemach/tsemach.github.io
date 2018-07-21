@@ -23,7 +23,6 @@ export class AngularFileMenuComponent implements OnInit, OnDestroy {
   constructor(private readFileService: ReadFileHttpClientService) { }
 
   ngOnInit() {
-    // path is: https://raw.githubusercontent.com/tsemach/pyexamples/master/pyexamples.list
     this.readFileService.setProject(this.name);
     this.source = '/angular/project/' + this.name;
 

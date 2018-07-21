@@ -50,10 +50,11 @@ export class AngularProjectComponent implements OnInit, OnDestroy {
     );
     this.readFileService.getFile('project.list', this.fileIsReady);
   }
+
   parse(filelist) {    
     let filesArray = filelist.split(/\r?\n/);
 
-    let directories = new Array<Directory>();
+    //let directories = new Array<Directory>();
     let parser = new ParseProjectFiles();
 
     let basedir = parser.parse(filesArray); 

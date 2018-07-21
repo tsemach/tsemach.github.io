@@ -24,6 +24,7 @@
     "angular-split": "^1.0.0-rc.3",
     "bootstrap": "^4.1.1",
     "core-js": "^2.5.4",
+    "cors": "^2.8.4",
     "font-awesome": "^4.7.0",
     "fs": "0.0.1-security",
     "marked": "^0.4.0",

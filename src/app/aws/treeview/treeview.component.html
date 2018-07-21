@@ -1,0 +1,18 @@
+
+<div *ngFor="let dir of directories">
+  
+    <button class="dropdown-btn" *ngIf="dir.name !== '.'" appDropdownDirective>{{ dir.name }} 
+      <i class="fa fa-caret-down"></i>
+    </button>  
+  
+    <div class="dropdown-container">
+      <app-aws-tree-view [directories]="dir.directories" [source]="source"></app-aws-tree-view>
+  
+      <div *ngFor="let file of dir.files" class="dropdown-container">
+        <a [routerLink]="[source, dir.getId(file)]" class="dropdown-btn">{{ file }} </a>
+      </div>                
+  
+    </div>  
+  
+  </div>
+  

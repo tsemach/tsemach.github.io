@@ -33,6 +33,11 @@ import { AngularObserverTutorialComponent } from './angular/observer-tutorial/ob
 import { AngularObserverTutorialHeaderComponent } from './angular/observer-tutorial/observer-tutorial-header/observer-tutorial-header.component';
 import { AngularObserverTutorialFirstComponent } from './angular/observer-tutorial/observer-tutorial-first/observer-tutorial-first.component';
 import { AngularObserverTutorialSecondComponent } from './angular/observer-tutorial/observer-tutorial-second/observer-tutorial-second.component';
+import { AwsComponent } from './aws/aws.component';
+import { AwsFileMenuComponent } from './aws/file-menu/file-menu.component';
+import { AwsViewerComponent } from './aws/viewer/viewer.component';
+import { AwsScriptHackComponent } from './aws/scripthack/scripthack.component';
+import { AwsTreeViewComponent } from './aws/treeview/treeview.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +62,11 @@ import { AngularObserverTutorialSecondComponent } from './angular/observer-tutor
     AngularObserverTutorialHeaderComponent,
     AngularObserverTutorialFirstComponent,
     AngularObserverTutorialSecondComponent,
+    AwsComponent,
+    AwsFileMenuComponent,
+    AwsViewerComponent,
+    AwsScriptHackComponent,
+    AwsTreeViewComponent,
   ],
   imports: [
     BrowserModule,

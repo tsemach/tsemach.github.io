@@ -1,27 +1,10 @@
 
-/**
- * @deprecated
- */
-export class DirectoryOld {
-  name: string;
-  directories: Array<string>;
-  files: Array<string>;
-  
-
-  constructor(name, directories, files) {
-      this.name = name;
-      this.files = files;
-      this.directories = directories;
-      
-  }
-
-}
-
 export class Directory {
   name: string;
   dirmap = new Map<string, Directory>();  
   directories: Array<Directory>;
   files: Array<string> = new Array<string>();
+  ids = new Map<string, string>();  
   fullpath = '';
 
   constructor(name, fullpath?) {
@@ -36,7 +19,7 @@ export class Directory {
 
   getGetDirMap() {
     return this.dirmap;
-  }
+  }  
 
   setDirectories() {
     this.directories = new Array<Directory>();
@@ -64,9 +47,18 @@ export class Directory {
     return this.dirmap.get(name);
   }
   
-  addFile(name: string) {
+  addFile(name: string, id?: string) {
+    if (id !== undefined) {
+      this.ids.set(name, id);
+      console.log("directory: setting file " + name + " with id = " + id);
+      console.log("directory: setting file " + name + " with id = " + this.getId(name));
+    }
     //console.log("Directory:addFile: this.name = <" + this.name + ">, name = " + name);
     this.files.push(name);
+  }
+
+  getId(name: string) {
+    return this.ids.get(name);
   }
 
   print(tabs: string = '') {
@@ -77,7 +69,6 @@ export class Directory {
       tabs = tabs + "\t";
     }
     for (let f in this.files) {
-      //if (this.name  !== '.' && this.files[f].length > 0) {
       if (this.files[f].length > 0) {
         console.log(tabs + this.files[f]);
       }

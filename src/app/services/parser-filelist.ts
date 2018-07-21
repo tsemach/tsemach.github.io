@@ -16,15 +16,6 @@ Output is
   this.directories = [pyexamples]; 
  */
 
-// let filelist = [
-//   'pyexamples/objects/attribute_02.py', 
-//   'pyexamples/objects/attribute_05.py',
-//   'pyexamples/metaclasses/singelton_01.py',
-//   'pyexamples/metaclasses/singelton_02.py',
-//   'pyexamples/decorators/property_03.py',
-//   'pyexamples/decorators/descriptor_02.py'];
-
-
 export class ParseProjectFiles {
   dirbase = new Directory('.');
 

@@ -17,8 +17,4 @@ export class TreeViewComponent implements OnInit {
   ngOnInit() {
   }
 
-  // onFileClick(filename: string) {
-  //   console.log("onFileClick: navigate to " + filename);
-  //   //this.router.navigate([this.source, filename])
-  // }
 }

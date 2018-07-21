@@ -1,0 +1,17 @@
+
+<div class="split-simple">
+  <split [direction]="direction" disabled=true gutterSize="1">
+  
+    <split-area size="15">         
+      <app-aws-file-menu></app-aws-file-menu>
+    </split-area>
+      
+    <split-area size="85" disabled=true>
+      <router-outlet></router-outlet> 
+    </split-area>
+  
+  </split>
+</div>  
+
+<!-- <ngx-gist [gistId]="'tsemach/650757635de8b7bd2122fe706c1fc91b'" style="height: 75%;"></ngx-gist> -->
+    

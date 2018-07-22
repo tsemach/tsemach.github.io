@@ -36,8 +36,8 @@ import { AngularObserverTutorialSecondComponent } from './angular/observer-tutor
 import { AwsComponent } from './aws/aws.component';
 import { AwsFileMenuComponent } from './aws/file-menu/file-menu.component';
 import { AwsViewerComponent } from './aws/viewer/viewer.component';
-import { AwsScriptHackComponent } from './aws/scripthack/scripthack.component';
-import { AwsTreeViewComponent } from './aws/treeview/treeview.component';
+import { AwsNgxGistComponent } from './aws/ngx-gist/ngx-gist.component';
+import { AwsDescriptionComponent } from './aws/description/description.component';
 
 @NgModule({
   declarations: [
@@ -65,8 +65,8 @@ import { AwsTreeViewComponent } from './aws/treeview/treeview.component';
     AwsComponent,
     AwsFileMenuComponent,
     AwsViewerComponent,
-    AwsScriptHackComponent,
-    AwsTreeViewComponent,
+    AwsNgxGistComponent,
+    AwsDescriptionComponent,
   ],
   imports: [
     BrowserModule,

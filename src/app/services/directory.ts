@@ -58,7 +58,8 @@ export class Directory {
   }
 
   getId(name: string) {
-    return this.ids.get(name);
+    let id = this.ids.get(name)
+    return id !== undefined ? id : "undefined";
   }
 
   print(tabs: string = '') {

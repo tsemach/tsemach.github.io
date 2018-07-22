@@ -20,17 +20,11 @@ export class AwsViewerComponent implements OnInit {
 
     this.route.params.subscribe(
       (params: Params) => {                
-        this.gistId = params['id'];        
-        //this.filename = params['filename'];        
+        this.gistId = params['id'];                   
         console.log("AwsViewerComponent: id = " + this.gistId);
-        console.log("AwsViewerComponent: filename = " + this.filename);
-       
-        //this.gistId(this.id);        
+        console.log("AwsViewerComponent: filename = " + this.filename);               
       }
-    );
-    
-    // let e: ElementRef;
-    // e.nativeElement.Renderer2();
+    );    
   }
 
 }

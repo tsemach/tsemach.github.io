@@ -9,9 +9,21 @@
     <tree-view [directories]="dir.directories" [source]="source"></tree-view>
 
     <div *ngFor="let file of dir.files" class="dropdown-container">
-      <a [routerLink]="[source, dir.fullpath + '/' + file]" class="dropdown-btn">{{ file }} </a>
+      <ng-template *ngIf="dir.getId(file) == 'undefined'; then withFullPath; else withId"></ng-template>      
+
+      <ng-template #withFullPath>
+        <a [routerLink]="[source, dir.fullpath + '/' + file]" class="dropdown-btn">{{ file }} </a> 
+      </ng-template>
+
+      <ng-template #withId>
+        <a [routerLink]="[source, dir.getId(file)]" class="dropdown-btn">{{ file }} </a>
+      </ng-template>
+
     </div>                
 
   </div>  
 
 </div>
+
+<!-- <a [routerLink]="[source, dir.getId(file)]" class="dropdown-btn">{{ file }} </a> -->
+

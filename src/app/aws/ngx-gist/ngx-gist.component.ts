@@ -50,17 +50,17 @@ import { Component, Input, ViewChild, ElementRef, ViewEncapsulation, OnChanges }
 
 @Component({
   selector: 'aws-ngx-gist',
-  template:`
-    <iframe #iframe type="text/javascript" width="100%" frameborder="0" style = "height:inherit"></iframe>
-  `,
-  styleUrls: [],
+  templateUrl: './ngx-gist.component.html',
+  // template:`
+  //   <iframe #iframe type="text/javascript" width="60%" frameborder="0" style = "height:inherit"></iframe>
+  // `,
+  styleUrls: ['./ngx-gist.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-
-export class AwsScriptHackComponent implements OnChanges {
-  @ViewChild('iframe') iframe:ElementRef;
+export class AwsNgxGistComponent implements OnChanges {
+  @ViewChild('iframe') iframe: ElementRef;
   @Input() gistId;
-  @Input() file:string;
+  @Input() file: string;
 
   ngOnChanges() {
     let fileName = (this.file) ? this.file : ''; 
@@ -82,5 +82,3 @@ export class AwsScriptHackComponent implements OnChanges {
   }
 
 }
-
-

@@ -35,9 +35,7 @@ export class AwsFileMenuComponent implements OnInit {
         //console.log("AngularProjectComponent: data = " + data);
         let gists = JSON.parse(data);         
         this.directories = [ this.parse(gists) ];
-        //console.log("AwsFileMenuComponent: data = " + JSON.stringify(gists, undefined, 2));
-        
-        // this.dirbase.setDirectories();    
+        //console.log("AwsFileMenuComponent: data = " + JSON.stringify(gists, undefined, 2));        
       }
     );
     this.readFileService.getFile('users/tsemach/gists', this.fileIsReady);
